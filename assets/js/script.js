@@ -1,78 +1,100 @@
-// Obtenemos el formulario por su ID;
-const formulario = document.getElementById('contactForm');
-
-// Escuchamos el evento de envío del formulario;
-formulario.addEventListener('submit', function(event) {
+// Esperar a que el DOM esté completamente cargado;
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contactForm');
     
-    // Variables de estado para saber si hay errores;
-    let hayErrores = false;
-
-    // Obtenemos los valores de los campos eliminando espacios al inicio y final;
-    const nombre = document.getElementById('nombre').value.trim();
-    const ciudad = document.getElementById('ciudad').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const asunto = document.getElementById('asunto').value.trim();
-    const descripcion = document.getElementById('descripcion').value.trim();
-
-    // Referencias a los contenedores de mensajes de error;
-    const errorNombre = document.getElementById('error-nombre');
-    const errorCiudad = document.getElementById('error-ciudad');
-    const errorEmail = document.getElementById('error-email');
-    const errorAsunto = document.getElementById('error-asunto');
-    const errorDescripcion = document.getElementById('error-descripcion');
-
-    // Limpiamos los mensajes de error previos;
-    errorNombre.textContent = "";
-    errorCiudad.textContent = "";
-    errorEmail.textContent = "";
-    errorAsunto.textContent = "";
-    errorDescripcion.textContent = "";
-
-    // Validación del Nombre (No vacío y mínimo 3 caracteres);
-    if (nombre === "") {
-        errorNombre.textContent = "El nombre es obligatorio.";
-        hayErrores = true;
-    } else if (nombre.length < 3) {
-        errorNombre.textContent = "El nombre debe tener al menos 3 caracteres.";
-        hayErrores = true;
-    }
-
-    // Validación de la Ciudad (No vacía);
-    if (ciudad === "") {
-        errorCiudad.textContent = "La ciudad es obligatoria.";
-        hayErrores = true;
-    }
-
-    // Validación del Email (No vacío y formato válido usando expresión regular);
-    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (email === "") {
-        errorEmail.textContent = "El correo electrónico es obligatorio.";
-        hayErrores = true;
-    } else if (!regexEmail.test(email)) {
-        errorEmail.textContent = "El formato del correo no es válido.";
-        hayErrores = true;
-    }
-
-    // Validación del Asunto (No vacío);
-    if (asunto === "") {
-        errorAsunto.textContent = "El asunto es obligatorio.";
-        hayErrores = true;
-    }
-
-    // Validación de la Descripción (No vacía y mínimo 10 caracteres);
-    if (descripcion === "") {
-        errorDescripcion.textContent = "La descripción es obligatoria.";
-        hayErrores = true;
-    } else if (descripcion.length < 10) {
-        errorDescripcion.textContent = "La descripción debe tener al menos 10 caracteres.";
-        hayErrores = true;
-    }
-
-    // Si existe algún error, evitamos que el formulario se envíe;
-    if (hayErrores) {
-        event.preventDefault();
-    } else {
-        // Si todo está correcto, podemos mostrar una alerta de éxito;
-        alert("¡Formulario enviado con éxito!");
-    }
+    // Escuchar el evento submit del formulario;
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevenir envío por defecto;
+        
+        // Llamar a la función de validación;
+        if (validateForm()) {
+            alert('✅ ¡Formulario válido! Mensaje enviado con éxito.');
+            // Opcional: limpiar el formulario después de enviar;
+            // form.reset();
+        } else {
+            alert('❌ Por favor, corrija los errores en el formulario.');
+        }
+    });
 });
+
+/**
+ * Función principal de validación del formulario;
+ * Retorna true si todos los campos son válidos, false si hay errores;
+ */
+function validateForm() {
+    let isValid = true;
+    
+    // ==========================================
+    // Validar Nombre
+    // ==========================================
+    // Requisitos: No vacío, mínimo 3 caracteres;
+    const nombre = document.getElementById('nombre');
+    const valorNombre = nombre.value.trim();
+    
+    if (valorNombre === '' || valorNombre.length < 3) {
+        nombre.classList.add('no-valid');
+        isValid = false;
+    } else {
+        nombre.classList.remove('no-valid');
+    }
+    
+    // ==========================================
+    // Validar Ciudad
+    // ==========================================
+    // Requisitos: No vacío;
+    const ciudad = document.getElementById('ciudad');
+    const valorCiudad = ciudad.value.trim();
+
+    if (valorCiudad === '') {
+        ciudad.classList.add('no-valid');
+        isValid = false;
+    } else {
+        ciudad.classList.remove('no-valid');
+    }
+    
+    // ==========================================
+    // Validar Email
+    // ==========================================
+    // Requisitos: No vacío, formato de correo válido;
+    const email = document.getElementById('email');
+    const valorEmail = email.value.trim();
+    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (valorEmail === '' || !regexEmail.test(valorEmail)) {
+        email.classList.add('no-valid');
+        isValid = false;
+    } else {
+        email.classList.remove('no-valid');
+    }
+    
+    // ==========================================
+    // Validar Asunto
+    // ==========================================
+    // Requisitos: No vacío;
+    const asunto = document.getElementById('asunto');
+    const valorAsunto = asunto.value.trim();
+
+    if (valorAsunto === '') {
+        asunto.classList.add('no-valid');
+        isValid = false;
+    } else {
+        asunto.classList.remove('no-valid');
+    }
+    
+    // ==========================================
+    // Validar Descripción
+    // ==========================================
+    // Requisitos: No vacío, mínimo 10 caracteres;
+    const descripcion = document.getElementById('descripcion');
+    const valorDescripcion = descripcion.value.trim();
+
+    if (valorDescripcion === '' || valorDescripcion.length < 10) {
+        descripcion.classList.add('no-valid');
+        isValid = false;
+    } else {
+        descripcion.classList.remove('no-valid');
+    }
+    
+    // Retornar el resultado final de la validación;
+    return isValid;
+}
