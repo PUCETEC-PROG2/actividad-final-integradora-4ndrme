@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Gamer - Contacto</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <nav class="nav-container">
+            <div class="nav-logo"><h1>GameStore</h1></div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
+                <li class="nav-item"><a href="categorias.html" class="nav-link">Categorías</a></li>
+                <li class="nav-item"><a href="productos.html" class="nav-link">Productos</a></li>
+                <li class="nav-item"><a href="contacto.html" class="nav-link">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2 class="section-title">Contáctanos</h2>
+        <section class="form-section">
+            <form id="contactForm" class="contact-form">
+                
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre">
+                    <span class="error-msg" id="error-nombre"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="ciudad">Ciudad:</label>
+                    <input type="text" id="ciudad" name="ciudad">
+                    <span class="error-msg" id="error-ciudad"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" name="email">
+                    <span class="error-msg" id="error-email"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="asunto">Asunto:</label>
+                    <input type="text" id="asunto" name="asunto">
+                    <span class="error-msg" id="error-asunto"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="descripcion">Descripción:</label>
+                    <textarea id="descripcion" name="descripcion" rows="4"></textarea>
+                    <span class="error-msg" id="error-descripcion"></span>
+                </div>
+
+                <button type="submit" class="btn">Enviar Mensaje</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>Desarrollado por Michael Quinatoa &copy; 2026 - Proyecto de Desarrollo Web</p>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

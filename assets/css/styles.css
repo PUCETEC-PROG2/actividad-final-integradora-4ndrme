@@ -1,0 +1,219 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1b2838; /* Fondo Steam */
+    color: #c7d5e0; /* Texto claro */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ================== NAVBAR ================== */
+.navbar {
+    background-color: #171a21; /* Navbar oscura */
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.5);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 32px;
+    margin: 0 auto;
+    max-width: 1200px;
+    flex-wrap: wrap;
+}
+
+.nav-logo h1 {
+    color: #ffffff;
+    font-size: 24px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 16px;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    color: #c7d5e0;
+    text-decoration: none;
+    font-size: 14pt;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-link:hover {
+    background-color: #2a475e;
+    color: #ffffff;
+}
+
+/* ================== MAIN & GRID ================== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px 16px;
+    flex: 1;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 24px;
+    color: #ffffff;
+}
+
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* ================== CARDS (Categorías y Productos) ================== */
+.category-card, .product-card {
+    background-color: #2a475e;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    flex: calc(33.333% - 20px);
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 16px;
+}
+
+.category-card h3 {
+    margin: 16px 0;
+    color: #ffffff;
+}
+
+.category-card p {
+    padding: 0 16px 16px;
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.product-name {
+    font-size: 14pt;
+    color: #ffffff;
+}
+
+.product-desc {
+    font-size: 10pt;
+}
+
+.product-price {
+    font-size: 16pt;
+    font-weight: bold;
+    color: #66c0f4;
+}
+
+/* ================== BOTONES ================== */
+.btn {
+    display: inline-block;
+    background-color: #66c0f4;
+    color: #000000;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    margin-top: auto;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #4a90e2;
+    color: #ffffff;
+}
+
+/* ================== FORMULARIO ================== */
+.form-section {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #2a475e;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.form-group input, .form-group textarea {
+    padding: 10px;
+    border: 1px solid #171a21;
+    border-radius: 4px;
+    background-color: #1b2838;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+.error-msg {
+    color: #ff5e5e;
+    font-size: 12px;
+    margin-top: 5px;
+    min-height: 15px;
+}
+
+/* ================== FOOTER ================== */
+footer {
+    background-color: #171a21;
+    text-align: center;
+    padding: 20px;
+    color: #8f98a0;
+    margin-top: auto;
+}
+
+/* ================== RESPONSIVE ================== */
+@media screen and (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+    }
+    
+    .nav-menu {
+        margin-top: 15px;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .category-card, .product-card {
+        flex: 100%;
+    }
+}
