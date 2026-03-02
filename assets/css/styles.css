@@ -33,9 +33,9 @@ body {
     flex-wrap: wrap;
 }
 
-.logo-nav h1 {
-    color: #ffffff;
-    font-size: 24px;
+.logo-nav img {
+    width: 150px;
+    height: auto;
 }
 
 .menu-nav {
@@ -184,11 +184,39 @@ body {
     width: 100%;
 }
 
-.grupo-formulario {
-    display: flex;
-    flex-direction: column;
+.grupo-formulario input, 
+.grupo-formulario textarea,
+.grupo-formulario select {
     width: 100%; 
-    margin-bottom: 0; /* Quitamos el margen porque el 'gap' del grid ya separa los elementos */
+    padding: 12px;
+    border: 1px solid #171a21;
+    border-radius: 4px;
+    background-color: #1b2838;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    box-sizing: border-box; 
+}
+
+/* Agregamos "select" a esta lista separando con una coma */
+.grupo-formulario input, 
+.grupo-formulario textarea,
+.grupo-formulario select {
+    width: 100%; 
+    padding: 12px;
+    border: 1px solid #171a21;
+    border-radius: 4px;
+    background-color: #1b2838;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    box-sizing: border-box; 
+}
+
+/* Agregamos "select" aquí también para que tenga los mismos 45px de altura */
+.grupo-formulario input,
+.grupo-formulario select {
+    height: 45px;
 }
 
 /* Clases especiales para los campos que queremos que ocupen TODA la fila (las dos columnas) */

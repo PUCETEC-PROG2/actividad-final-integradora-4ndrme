@@ -9,11 +9,11 @@
 <body>
     <header class="barra-navegacion">
         <nav class="contenedor-nav">
-            <div class="logo-nav"><h1>GameStore</h1></div>
+            <div class="logo-nav"><img src="assets/img/logoopng.png" alt="logo"></div>
             <ul class="menu-nav">
                 <li class="item-nav"><a href="index.html" class="enlace-nav">Inicio</a></li>
                 <li class="item-nav"><a href="categorias.html" class="enlace-nav">Categorías</a></li>
-                <li class="item-nav"><a href="productos_generales.html" class="enlace-nav">Productos</a></li>
+                <li class="item-nav"><a href="productos_generales.html" class="enlace-nav">Todos los productos</a></li>
                 <li class="item-nav"><a href="contacto.html" class="enlace-nav">Contacto</a></li>
             </ul>
         </nav>
@@ -44,7 +44,15 @@
 
                 <div class="grupo-formulario ancho-completo">
                     <label for="asunto">Asunto:</label>
-                    <input type="text" id="asunto" name="asunto">
+                    <select id="asunto" name="asunto">
+                        <option value="">Seleccione una opción</option>
+                        <option value="Soporte Técnico">Soporte Técnico</option>
+                        <option value="Consulta de Ventas">Consulta de Ventas</option>
+                        <option value="Devoluciones">Devoluciones</option>
+                        <option value="Sugerencias">Sugerencias</option>
+                        <option value="Compra mayorista">Compra mayorista</option>
+                        <option value="Otros">Otros</option>
+                    </select>
                     <span class="mensaje-error" id="error-asunto"></span>
                 </div>
 
