@@ -24,25 +24,26 @@
         <section class="seccion-formulario">
             <form id="formularioContacto" class="formulario-contacto">
                 
-                <div class="grupo-formulario">
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="nombre">
-                    <span class="mensaje-error" id="error-nombre"></span>
-                </div>
+                <div class="fila-formulario">
+                    <div class="grupo-formulario">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre">
+                        <span class="mensaje-error" id="error-nombre"></span>
+                    </div>
 
-                <div class="grupo-formulario">
-                    <label for="ciudad">Ciudad:</label>
-                    <input type="text" id="ciudad" name="ciudad">
-                    <span class="mensaje-error" id="error-ciudad"></span>
+                    <div class="grupo-formulario">
+                        <label for="ciudad">Ciudad:</label>
+                        <input type="text" id="ciudad" name="ciudad">
+                        <span class="mensaje-error" id="error-ciudad"></span>
+                    </div>
                 </div>
-
-                <div class="grupo-formulario ancho-completo">
+                <div class="grupo-formulario">
                     <label for="email">Email:</label>
                     <input type="text" id="email" name="email">
                     <span class="mensaje-error" id="error-email"></span>
                 </div>
 
-                <div class="grupo-formulario ancho-completo">
+                <div class="grupo-formulario">
                     <label for="asunto">Asunto:</label>
                     <select id="asunto" name="asunto">
                         <option value="">Seleccione una opción</option>
@@ -56,13 +57,15 @@
                     <span class="mensaje-error" id="error-asunto"></span>
                 </div>
 
-                <div class="grupo-formulario ancho-completo">
+                <div class="grupo-formulario">
                     <label for="descripcion">Descripción:</label>
                     <textarea id="descripcion" name="descripcion" rows="4"></textarea>
                     <span class="mensaje-error" id="error-descripcion"></span>
                 </div>
 
-                <button type="submit" class="boton">Enviar Mensaje</button>
+                <div class="grupo-formulario">
+                    <button type="submit" class="boton">Enviar Mensaje</button>
+                </div>
             </form>
         </section>
     </main>

@@ -166,8 +166,7 @@ body {
     display: block;
     width: 100%; 
     max-width: 700px; 
-    /* Aseguramos un ancho mínimo para que no colapse en pantallas grandes */
-    min-width: 500px; 
+    /* CAMBIO: Eliminamos min-width: 500px porque esto era lo que rompía tu diseño en el celular */
     margin: 40px auto;
     background-color: #2a475e;
     padding: 40px;
@@ -176,52 +175,28 @@ body {
     box-sizing: border-box; 
 }
 
-/* Usamos Grid para crear un diseño de dos columnas */
+/* CAMBIO: Eliminamos el display: grid que estaba causando conflictos, volvemos a formato bloque básico */
 .formulario-contacto {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Crea dos columnas del mismo ancho */
-    gap: 20px; /* Crea un espacio uniforme entre las filas y columnas */
     width: 100%;
 }
 
-.grupo-formulario input, 
-.grupo-formulario textarea,
-.grupo-formulario select {
-    width: 100%; 
-    padding: 12px;
-    border: 1px solid #171a21;
-    border-radius: 4px;
-    background-color: #1b2838;
-    color: #ffffff;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    box-sizing: border-box; 
+/* CAMBIO: Creamos una fila Flexbox básica para poner Nombre y Ciudad juntos */
+.fila-formulario {
+    display: flex;
+    gap: 20px;
+    width: 100%;
 }
 
-/* Agregamos "select" a esta lista separando con una coma */
-.grupo-formulario input, 
-.grupo-formulario textarea,
-.grupo-formulario select {
-    width: 100%; 
-    padding: 12px;
-    border: 1px solid #171a21;
-    border-radius: 4px;
-    background-color: #1b2838;
-    color: #ffffff;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    box-sizing: border-box; 
+/* Asegura que Nombre y Ciudad midan el 50% cada uno dentro de su fila */
+.fila-formulario .grupo-formulario {
+    flex: 1;
 }
 
-/* Agregamos "select" aquí también para que tenga los mismos 45px de altura */
-.grupo-formulario input,
-.grupo-formulario select {
-    height: 45px;
-}
-
-/* Clases especiales para los campos que queremos que ocupen TODA la fila (las dos columnas) */
-.ancho-completo {
-    grid-column: 1 / -1; 
+.grupo-formulario {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: 100%;
 }
 
 .grupo-formulario label {
@@ -230,8 +205,10 @@ body {
     color: #ffffff;
 }
 
+/* CAMBIO: Unificamos todos los estilos de las cajas de texto en un solo bloque limpio */
 .grupo-formulario input, 
-.grupo-formulario textarea {
+.grupo-formulario textarea,
+.grupo-formulario select {
     width: 100%; 
     padding: 12px;
     border: 1px solid #171a21;
@@ -243,7 +220,8 @@ body {
     box-sizing: border-box; 
 }
 
-.grupo-formulario input {
+.grupo-formulario input,
+.grupo-formulario select {
     height: 45px;
 }
 
@@ -259,15 +237,13 @@ body {
     min-height: 15px;
 }
 
-/* Clase dinámica añadida desde JavaScript cuando hay error */
 .no-valid {
     border: 2px solid #ff5e5e !important;
     background-color: #ffe6e6 !important;
     color: #000000 !important;
 }
 
-/* Opcional: Hacer que el botón también ocupe todo el ancho para verse más moderno */
-.seccion-formulario .boton {
+.boton {
     width: 100%;
     margin-top: 10px;
     font-size: 18px;
@@ -300,34 +276,16 @@ footer {
         flex: 100%;
     }
 
-    /* --- NUEVO: ARREGLO DEL FORMULARIO PARA CELULARES --- */
+    /* CAMBIO: Al llegar al tamaño de celular, hacemos los ajustes necesarios */
     .seccion-formulario {
-        width: 95% !important; /* Deja un pequeño margen a los lados en lugar de pegarse al borde */
-        padding: 20px !important; /* Reduce el relleno interno grueso */
-        margin: 20px auto !important;
-        box-sizing: border-box !important;
+        width: 95%; /* 95% del ancho de la pantalla */
+        padding: 20px; /* Menos relleno para que no se coma el espacio del celular */
+        margin: 20px auto;
     }
 
-    /* Forzamos a que CUALQUIER contenedor flex dentro del formulario se vuelva columna */
-    .formulario-contacto, 
-    .formulario-contacto div[style*="flex-direction: row"], /* Si usaste estilos en línea */
-    .fila-formulario /* Por si creaste una clase para la fila */ {
-        display: flex !important;
-        flex-direction: column !important;
-        width: 100% !important;
-    }
-
-    .grupo-formulario {
-        width: 100% !important;
-        margin-right: 0 !important; /* Quita márgenes laterales si los pusiste */
-        box-sizing: border-box !important;
-    }
-
-    /* Aseguramos que los inputs y selects no se desborden */
-    .grupo-formulario input, 
-    .grupo-formulario textarea,
-    .grupo-formulario select {
-        width: 100% !important;
-        box-sizing: border-box !important;
+    /* CAMBIO: Le decimos a la fila de Nombre y Ciudad que se apile hacia abajo (columna) en celulares */
+    .fila-formulario {
+        flex-direction: column;
+        gap: 0;
     }
 }
