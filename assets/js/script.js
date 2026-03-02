@@ -78,6 +78,7 @@ function validarFormulario() {
 // ==========================================
 // LÓGICA DE FILTRADO DE PRODUCTOS
 // ==========================================
+
 const tarjetasProductos = document.querySelectorAll('.tarjeta-producto');
 
 if (tarjetasProductos.length > 0) {
