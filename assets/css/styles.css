@@ -161,7 +161,7 @@ body {
 }
 
 /* ================== FORMULARIO ================== */
-/* ================== FORMULARIO (ACTUALIZADO) ================== */
+
 .seccion-formulario {
     display: block;
     width: 100%; 
@@ -299,5 +299,35 @@ footer {
     .tarjeta-categoria, .tarjeta-producto {
         flex: 100%;
     }
-}
 
+    /* --- NUEVO: ARREGLO DEL FORMULARIO PARA CELULARES --- */
+    .seccion-formulario {
+        width: 95% !important; /* Deja un pequeño margen a los lados en lugar de pegarse al borde */
+        padding: 20px !important; /* Reduce el relleno interno grueso */
+        margin: 20px auto !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Forzamos a que CUALQUIER contenedor flex dentro del formulario se vuelva columna */
+    .formulario-contacto, 
+    .formulario-contacto div[style*="flex-direction: row"], /* Si usaste estilos en línea */
+    .fila-formulario /* Por si creaste una clase para la fila */ {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+
+    .grupo-formulario {
+        width: 100% !important;
+        margin-right: 0 !important; /* Quita márgenes laterales si los pusiste */
+        box-sizing: border-box !important;
+    }
+
+    /* Aseguramos que los inputs y selects no se desborden */
+    .grupo-formulario input, 
+    .grupo-formulario textarea,
+    .grupo-formulario select {
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+}
