@@ -161,36 +161,67 @@ body {
 }
 
 /* ================== FORMULARIO ================== */
+/* ================== FORMULARIO (ACTUALIZADO) ================== */
 .seccion-formulario {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
+    display: block;
+    width: 100%; 
+    max-width: 700px; 
+    /* Aseguramos un ancho mínimo para que no colapse en pantallas grandes */
+    min-width: 500px; 
+    margin: 40px auto;
     background-color: #2a475e;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box; 
+}
+
+/* Usamos Grid para crear un diseño de dos columnas */
+.formulario-contacto {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Crea dos columnas del mismo ancho */
+    gap: 20px; /* Crea un espacio uniforme entre las filas y columnas */
+    width: 100%;
 }
 
 .grupo-formulario {
     display: flex;
     flex-direction: column;
-    margin-bottom: 15px;
+    width: 100%; 
+    margin-bottom: 0; /* Quitamos el margen porque el 'gap' del grid ya separa los elementos */
+}
+
+/* Clases especiales para los campos que queremos que ocupen TODA la fila (las dos columnas) */
+.ancho-completo {
+    grid-column: 1 / -1; 
 }
 
 .grupo-formulario label {
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     font-weight: bold;
     color: #ffffff;
 }
 
-.grupo-formulario input, .grupo-formulario textarea {
-    width: 100%;
-    padding: 10px;
+.grupo-formulario input, 
+.grupo-formulario textarea {
+    width: 100%; 
+    padding: 12px;
     border: 1px solid #171a21;
     border-radius: 4px;
     background-color: #1b2838;
     color: #ffffff;
     font-family: Arial, sans-serif;
+    font-size: 16px;
+    box-sizing: border-box; 
+}
+
+.grupo-formulario input {
+    height: 45px;
+}
+
+.grupo-formulario textarea {
+    min-height: 150px;
+    resize: vertical;
 }
 
 .mensaje-error {
@@ -205,6 +236,14 @@ body {
     border: 2px solid #ff5e5e !important;
     background-color: #ffe6e6 !important;
     color: #000000 !important;
+}
+
+/* Opcional: Hacer que el botón también ocupe todo el ancho para verse más moderno */
+.seccion-formulario .boton {
+    width: 100%;
+    margin-top: 10px;
+    font-size: 18px;
+    padding: 12px;
 }
 
 /* ================== PIE DE PÁGINA ================== */
@@ -233,3 +272,4 @@ footer {
         flex: 100%;
     }
 }
+
