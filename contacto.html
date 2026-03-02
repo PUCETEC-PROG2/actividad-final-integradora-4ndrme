@@ -7,54 +7,54 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-    <header class="navbar">
-        <nav class="nav-container">
-            <div class="nav-logo"><h1>GameStore</h1></div>
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
-                <li class="nav-item"><a href="categorias.html" class="nav-link">Categorías</a></li>
-                <li class="nav-item"><a href="productos.html" class="nav-link">Productos</a></li>
-                <li class="nav-item"><a href="contacto.html" class="nav-link">Contacto</a></li>
+    <header class="barra-navegacion">
+        <nav class="contenedor-nav">
+            <div class="logo-nav"><h1>GameStore</h1></div>
+            <ul class="menu-nav">
+                <li class="item-nav"><a href="index.html" class="enlace-nav">Inicio</a></li>
+                <li class="item-nav"><a href="categorias.html" class="enlace-nav">Categorías</a></li>
+                <li class="item-nav"><a href="productos_generales.html" class="enlace-nav">Productos</a></li>
+                <li class="item-nav"><a href="contacto.html" class="enlace-nav">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="container">
-        <h2 class="section-title">Contáctanos</h2>
-        <section class="form-section">
-            <form id="contactForm" class="contact-form">
+    <main class="contenedor">
+        <h2 class="titulo-seccion">Contáctanos</h2>
+        <section class="seccion-formulario">
+            <form id="formularioContacto" class="formulario-contacto">
                 
-                <div class="form-group">
+                <div class="grupo-formulario">
                     <label for="nombre">Nombre:</label>
                     <input type="text" id="nombre" name="nombre">
-                    <span class="error-msg" id="error-nombre"></span>
+                    <span class="mensaje-error" id="error-nombre"></span>
                 </div>
 
-                <div class="form-group">
+                <div class="grupo-formulario">
                     <label for="ciudad">Ciudad:</label>
                     <input type="text" id="ciudad" name="ciudad">
-                    <span class="error-msg" id="error-ciudad"></span>
+                    <span class="mensaje-error" id="error-ciudad"></span>
                 </div>
 
-                <div class="form-group">
+                <div class="grupo-formulario">
                     <label for="email">Email:</label>
                     <input type="text" id="email" name="email">
-                    <span class="error-msg" id="error-email"></span>
+                    <span class="mensaje-error" id="error-email"></span>
                 </div>
 
-                <div class="form-group">
+                <div class="grupo-formulario">
                     <label for="asunto">Asunto:</label>
                     <input type="text" id="asunto" name="asunto">
-                    <span class="error-msg" id="error-asunto"></span>
+                    <span class="mensaje-error" id="error-asunto"></span>
                 </div>
 
-                <div class="form-group">
+                <div class="grupo-formulario">
                     <label for="descripcion">Descripción:</label>
                     <textarea id="descripcion" name="descripcion" rows="4"></textarea>
-                    <span class="error-msg" id="error-descripcion"></span>
+                    <span class="mensaje-error" id="error-descripcion"></span>
                 </div>
 
-                <button type="submit" class="btn">Enviar Mensaje</button>
+                <button type="submit" class="boton">Enviar Mensaje</button>
             </form>
         </section>
     </main>
