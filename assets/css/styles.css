@@ -166,7 +166,6 @@ body {
     display: block;
     width: 100%; 
     max-width: 700px; 
-    /* CAMBIO: Eliminamos min-width: 500px porque esto era lo que rompía tu diseño en el celular */
     margin: 40px auto;
     background-color: #2a475e;
     padding: 40px;
@@ -174,20 +173,16 @@ body {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
     box-sizing: border-box; 
 }
-
-/* CAMBIO: Eliminamos el display: grid que estaba causando conflictos, volvemos a formato bloque básico */
 .formulario-contacto {
     width: 100%;
 }
 
-/* CAMBIO: Creamos una fila Flexbox básica para poner Nombre y Ciudad juntos */
 .fila-formulario {
     display: flex;
     gap: 20px;
     width: 100%;
 }
 
-/* Asegura que Nombre y Ciudad midan el 50% cada uno dentro de su fila */
 .fila-formulario .grupo-formulario {
     flex: 1;
 }
@@ -205,7 +200,7 @@ body {
     color: #ffffff;
 }
 
-/* CAMBIO: Unificamos todos los estilos de las cajas de texto en un solo bloque limpio */
+
 .grupo-formulario input, 
 .grupo-formulario textarea,
 .grupo-formulario select {

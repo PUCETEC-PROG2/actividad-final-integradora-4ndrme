@@ -34,7 +34,7 @@ function validarFormulario() {
     // Validar Ciudad;
     const ciudad = document.getElementById('ciudad');
     const valorCiudad = ciudad.value.trim();
-    if (valorCiudad === '') {
+    if (valorCiudad === '' || valorCiudad.length < 3) {
         ciudad.classList.add('no-valid');
         esValido = false;
     } else {
@@ -71,14 +71,12 @@ function validarFormulario() {
     } else {
         descripcion.classList.remove('no-valid');
     }
-    
     return esValido;
 }
 
 // ==========================================
 // LÓGICA DE FILTRADO DE PRODUCTOS
 // ==========================================
-
 const tarjetasProductos = document.querySelectorAll('.tarjeta-producto');
 
 if (tarjetasProductos.length > 0) {
