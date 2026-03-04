@@ -271,14 +271,12 @@ footer {
         flex: 100%;
     }
 
-    /* CAMBIO: Al llegar al tamaño de celular, hacemos los ajustes necesarios */
     .seccion-formulario {
-        width: 95%; /* 95% del ancho de la pantalla */
+        width: 95%; 
         padding: 20px; 
         margin: 20px auto;
     }
 
-    /* CAMBIO: Le decimos a la fila de Nombre y Ciudad que se apile hacia abajo (columna) en celulares */
     .fila-formulario {
         flex-direction: column;
         gap: 0;
