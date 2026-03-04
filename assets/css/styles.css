@@ -1,4 +1,4 @@
-/* Reset básico */
+
 * {
     margin: 0;
     padding: 0;
@@ -60,7 +60,7 @@ body {
     color: #ffffff;
 }
 
-/* ================== CONTENIDO PRINCIPAL Y GRILLA ================== */
+/* ================== CONTENIDO PRINCIPAL Y GRIDTH  ================== */
 .contenedor {
     max-width: 1200px;
     margin: 0 auto;
@@ -274,7 +274,7 @@ footer {
     /* CAMBIO: Al llegar al tamaño de celular, hacemos los ajustes necesarios */
     .seccion-formulario {
         width: 95%; /* 95% del ancho de la pantalla */
-        padding: 20px; /* Menos relleno para que no se coma el espacio del celular */
+        padding: 20px; 
         margin: 20px auto;
     }
 

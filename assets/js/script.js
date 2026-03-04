@@ -1,16 +1,16 @@
-// Esperar a que el DOM esté completamente cargado;
+// Esperar a que el DOM esté completamente cargado
 document.addEventListener('DOMContentLoaded', function() {
     const formulario = document.getElementById('formularioContacto');
     
     if (formulario) {
-        // Escuchar el evento submit del formulario;
+        // Escuchar el evento submit del formulario
         formulario.addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevenir envío por defecto;
+            event.preventDefault(); // Prevenir envío por defecto
             
-            // Llamar a la función de validación;
+            // Llamar a la función de validación
             if (validarFormulario()) {
                 alert('✅ ¡Formulario válido! Mensaje enviado con éxito.');
-                // formulario.reset(); // Opcional: limpiar al enviar;
+                // formulario.reset() // Opcional: limpiar al enviar
             } else {
                 alert('❌ Por favor, corrija los errores en el formulario.');
             }
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function validarFormulario() {
     let esValido = true;
     
-    // Validar Nombre;
+    // Validar Nombre
     const nombre = document.getElementById('nombre');
     const valorNombre = nombre.value.trim();
     if (valorNombre === '' || valorNombre.length < 3) {
@@ -31,7 +31,7 @@ function validarFormulario() {
         nombre.classList.remove('no-valid');
     }
     
-    // Validar Ciudad;
+    // Validar Ciudad
     const ciudad = document.getElementById('ciudad');
     const valorCiudad = ciudad.value.trim();
     if (valorCiudad === '' || valorCiudad.length < 3) {
@@ -41,7 +41,7 @@ function validarFormulario() {
         ciudad.classList.remove('no-valid');
     }
     
-    // Validar Email;
+    // Validar Email
     const email = document.getElementById('email');
     const valorEmail = email.value.trim();
     const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -52,7 +52,7 @@ function validarFormulario() {
         email.classList.remove('no-valid');
     }
     
-    // Validar Asunto;
+    // Validar Asunto
     const asunto = document.getElementById('asunto');
     const valorAsunto = asunto.value.trim();
     if (valorAsunto === '') {
@@ -74,9 +74,9 @@ function validarFormulario() {
     return esValido;
 }
 
-// ==========================================
+// ================================
 // LÓGICA DE FILTRADO DE PRODUCTOS
-// ==========================================
+// ================================
 const tarjetasProductos = document.querySelectorAll('.tarjeta-producto');
 
 if (tarjetasProductos.length > 0) {
